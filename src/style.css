@@ -1,0 +1,26 @@
+:root {
+  --background-img: url('../img/restaurant.jpg');
+}
+body {
+  height: 100vh;
+  position: relative;
+
+  background: no-repeat var(--background-img);
+  background-size: cover;
+  background-attachment: fixed;
+}
+#content {
+  display: flex;
+  justify-content: center;
+}
+.tab-content {
+  position:absolute;
+  display: none;
+
+  font-size: 2rem;
+  color: white;
+  border: 1px solid white;
+}
+.active {
+  display: block;
+}
