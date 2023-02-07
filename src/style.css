@@ -1,26 +1,124 @@
+@font-face {
+  font-family: 'Gemosh';
+  src: url('../fonts/Gemosh Headline Regular/Gemosh Headline Regular.ttf');
+}
+@font-face {
+  font-family: 'Varela';
+  src: url('../fonts/Varela_Round/VarelaRound-Regular.ttf');
+}
 :root {
-  --background-img: url('../img/restaurant.jpg');
+  --background-img: url('../img/sushi.webp');
+  --header-color: rgb(250, 255, 253, 0.8);
+  --secondary-header-color: rgb(231, 222, 205, 0.7);
+  --tab-background-color: rgb(215, 187, 168, 0.85);
+  --heading-font: 'Gemosh', sans-serif;
+  --content-font: 'Varela', sans-serif;
+  --tab-btn-border-color: rgb(107, 94, 98, 0.8);
+  --default-transition: all 0.2s ease-in-out;
+  --h1-color: #0e273c;
 }
 body {
   height: 100vh;
-  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  font-family: var(--content-font);
 
   background: no-repeat var(--background-img);
   background-size: cover;
   background-attachment: fixed;
+
+  box-sizing: border-box;
+}
+p {
+  margin: 0;
+}
+h1 {
+  margin: 0;
+  font-family: var(--heading-font);
+  color: var(--h1-color);
+}
+header {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem;
+
+  background-color: var(--header-color);
+}
+header > h1 {
+  font-size: 4rem;
+}
+header button {
+  position: relative;
+  font-size: 1.5rem;
+  appearance: none;
+  border: none;
+  padding: 0.6rem 0;
+  width: 13rem;
+  background-color: inherit;
+  transition: var(--default-transition);
+}
+header button:nth-child(2) {
+  border-right: 2px solid var(--tab-btn-border-color);
+  border-left: 2px solid var(--tab-btn-border-color);
+}
+header button:hover {
+  padding-top: 0;
+  transition: var(--default-transition);
+}
+button:hover {
+  cursor: pointer;
+}
+.btn-container {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 1rem;
 }
 #content {
+  flex: 1 0 auto;
+
   display: flex;
   justify-content: center;
+
+  padding: 2rem;
 }
 .tab-content {
-  position:absolute;
-  display: none;
+  height: fit-content;
+  background-color: var(--tab-background-color);
+  border-radius: 2rem;
+  font-size: 1.2rem;
 
-  font-size: 2rem;
-  color: white;
-  border: 1px solid white;
+  width: max(40%, 30rem);
+  padding: 2rem 4rem;
+
+  display: none;
+  flex-flow: column;
+  align-items: center;
+  gap: 2rem;
+}
+.tab-content > h1 {
+  font-size: 3rem;
 }
 .active {
-  display: block;
+  display: flex;
+}
+.dish-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 3rem;
+}
+.dish {
+  /* height: 20rem; */
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  gap: 2rem;
+}
+.dish > img {
+  height: 12rem;
+}
+.contacts > p {
+  align-self: flex-start;
 }
