@@ -23,6 +23,10 @@ module.exports = {
         test: /\.ttf$/i,
         type: 'asset/resource',
       },
+      {
+        test: /\.webp$/i,
+        type: 'asset/resource',
+      },
     ],
   },
 };

@@ -1,4 +1,8 @@
 import injectDishEle from './dish';
+import sushi0 from '../img/sushi0.webp';
+import sushi1 from '../img/sushi1.webp';
+import sushi2 from '../img/sushi2.webp'
+import sushi3 from '../img/sushi3.webp'
 
 function injectMenuEle(container) {
   const menu = document.createElement('div');
@@ -14,9 +18,11 @@ function injectMenuEle(container) {
   sampleText.textContent =
     'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus, odio soluta? Debitis magnam dolore quod eaque sapiente sint corporis facere?';
 
+  const sources = [sushi0, sushi1, sushi2, sushi3];
+
   for(let i = 0; i < 4; i += 1) {
     const name = `Dish ${i}`;
-    const src = `../img/sushi${i}.webp`;
+    const src = sources[i];
     injectDishEle(name, src, dishContainer);
   }
 
